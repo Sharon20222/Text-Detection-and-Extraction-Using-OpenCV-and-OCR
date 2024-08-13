@@ -14,23 +14,27 @@ The goal of this project is to develop a robust system that efficiently detects 
 - **Developers and Data Scientists**: Integrating text extraction into various applications and research projects.
 
 ## System Features
-
+![Front Page](Images/1.jpeg)
 ### User Interaction
 - **Image Upload**: Users can upload an image via the web interface.
 - **Text Processing Options**: After uploading, users can choose to view, translate, or summarize the extracted text.
-![Front Page](Images/1.jpeg)
+![Text Processing](Images/2.jpeg)
 
 ### Text Processing
 - **OCR Processing**: Images are processed for OCR using Tesseract.
 - **Text Display**: Extracted text is stored and displayed on the web interface.
 - **Optional Features**: Users can choose to translate or summarize the extracted text.
-![Text Processing](Images/2.jpeg)
+
 ### Database Interaction
 - **Metadata Storage**: Image metadata and results are stored in MySQL.
+![Database](Images/21.jpeg)
+
 - **History Retrieval**: Users can retrieve the history of processed images.
-![Database](Images/3.jpeg)
+![Database](Images/22.jpeg)
+![Database](Images/25.jpeg)
 ### Output
 - **Text Display**: Processed text is displayed on the web interface.
+![Page](Images/3.jpeg)
 - **User Options**: Users can view, translate, or summarize the text as required.
 
 ## Technology Stack
