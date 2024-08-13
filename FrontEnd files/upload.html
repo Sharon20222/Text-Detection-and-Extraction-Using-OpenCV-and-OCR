@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="upload-container">
+    <div class="upload-image">
+        <img src="{{ url_for('static', filename='images/text_detection.jpg') }}" alt="Text Detection and Extraction">
+    </div>
+    <div class="upload-form">
+        <h2>Upload and Process Image</h2>
+        <form method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Choose Image:</label>
+                <input type="file" name="file" required>
+            </div>
+            <div class="form-group">
+                <label for="operation">Choose Operation:</label>
+                <select name="operation">
+                    <option value="view">View Full Text</option>
+                    <option value="translate">Translate Text</option>
+                    <option value="summarize">Summarize Text</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="translate_to">Translate Extracted Text to:</label>
+                <select name="translate_to">
+                    <option value="">None</option>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <!-- Add more language options as needed -->
+                </select>
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+
+        {% if extracted_text %}
+            <h3>{{ operation_name }}</h3>
+            <p>{{ extracted_text }}</p>
+            {% if detected_lang %}
+                <p><strong>Detected Language:</strong> {{ detected_lang }}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

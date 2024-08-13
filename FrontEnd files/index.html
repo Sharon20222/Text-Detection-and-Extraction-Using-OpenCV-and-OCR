@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="welcome-container">
+    <div class="welcome-content">
+        <h2>Welcome to TextVision, {{ session['username'] }}!</h2>
+        <p>TextVision is your go-to platform for advanced text detection, extraction, translation, and summarization from images.</p>
+    </div>
+    <div class="welcome-gif">
+        <img src="{{ url_for('static', filename='images/pic_scan.gif') }}" alt="Text Processing GIF">
+    </div>
+</div>
+{% endblock %}

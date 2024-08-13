@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="history-container">
+    <h2>{{ operation_name }}</h2>
+    <ul class="history-list">
+        {% for image in images %}
+            <li class="history-item">
+                <h3>{{ image.operation_name }}</h3>
+                <a href="{{ url_for('uploaded_file', filename=image['image_path'].replace('uploads/', '')) }}" target="_blank">View Image</a>
+                <div class="extracted-text-box">
+                    <pre>{{ image['extracted_text'] }}</pre>
+                </div>
+                <button class="copy-btn" data-text="{{ image['extracted_text'] }}">Copy Text</button>
+                <a href="{{ url_for('download_text', image_id=image['id']) }}" download>Download Text</a>
+                {% if image['detected_lang'] %}
+                    <p><strong>Detected Language:</strong> {{ image['detected_lang'] }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script>
+    document.querySelectorAll('.copy-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var text = this.getAttribute('data-text');
+            navigator.clipboard.writeText(text).then(() => {
+                this.textContent = 'Copied';
+                setTimeout(() => {
+                    this.textContent = 'Copy Text';
+                }, 2000);
+            });
+        });
+    });
+</script>
+{% endblock %}
