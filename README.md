@@ -18,16 +18,17 @@ The goal of this project is to develop a robust system that efficiently detects 
 ### User Interaction
 - **Image Upload**: Users can upload an image via the web interface.
 - **Text Processing Options**: After uploading, users can choose to view, translate, or summarize the extracted text.
+![Front Page](images/1.jpeg)
 
 ### Text Processing
 - **OCR Processing**: Images are processed for OCR using Tesseract.
 - **Text Display**: Extracted text is stored and displayed on the web interface.
 - **Optional Features**: Users can choose to translate or summarize the extracted text.
-
+![Text Processing](images/2.jpeg)
 ### Database Interaction
 - **Metadata Storage**: Image metadata and results are stored in MySQL.
 - **History Retrieval**: Users can retrieve the history of processed images.
-
+![Database](images/3.jpeg)
 ### Output
 - **Text Display**: Processed text is displayed on the web interface.
 - **User Options**: Users can view, translate, or summarize the text as required.
